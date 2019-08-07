@@ -1,12 +1,3 @@
-<!-- Part one https://www.youtube.com/watch?v=I752ofYu7ag -->
-<!-- Part two https://www.youtube.com/watch?v=jOKTjE6Q5QQ -->
-<!-- Part three https://www.youtube.com/watch?v=ay_w82osHpM -->
-<!-- Part four https://www.youtube.com/watch?v=01vd1kF9vZg -->
-<!-- Part five https://www.youtube.com/watch?v=bXAT2uO3sw8 -->
-<!-- Part six https://www.youtube.com/watch?v=qS0a4nKQ6h8 -->
-<!-- Part seven https://www.youtube.com/watch?v=Ah65hBRffwc -->
-<!-- Part eight https://www.youtube.com/watch?v=WoQTjJepDWM -->
-
 <html>
 <head>
 	<title>ciBlog</title>
