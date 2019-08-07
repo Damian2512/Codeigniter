@@ -8,6 +8,8 @@ $route['posts/(:any)'] = 'posts/view/$1';
 $route['posts'] = 'posts/index';
 
 
+
+
 $route['default_controller'] = 'pages/view';
 
 $route['categories'] = 'categories/index';
