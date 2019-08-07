@@ -5,7 +5,7 @@
 	<?php echo $post['body']; ?>
 </div>
 
-<?php if($this->session->userdata('user_id') == $post['user_id']): ?>
+<?php if($this->session->userdata('user_id') == $post['user_id'] || isAdmin()): ?>
 
 <hr>
 <a class="btn btn-default pull-left" href="<?php echo base_url();?>posts/edit/<?php echo $post['slug']; ?>">Edit</a>

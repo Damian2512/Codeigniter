@@ -45,6 +45,7 @@ $data['title']	= $this->category_model->get_category($id)->name;
 		$this->load->view('posts/index', $data);
 		$this->load->view('templates/footer');
 	}
+
 	public function delete($id){
 		// Check login
 		if (!$this->session->userdata('logged_in')){
