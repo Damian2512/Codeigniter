@@ -9,3 +9,24 @@ if (!function_exists('isAdmin()')){
 		}
 	}
 }
+
+if (!function_exists('loggedIn()')) {
+	function loggedIn() {
+		if(isset($_SESSION['user_id'] )){
+			return true;
+		}else {
+			return false;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
