@@ -1,11 +1,11 @@
 # Codeigniter
 
-Welcome to the ciBlog application
+Welcome to the crud ciBlog application made with codeigniter.
 
-## Installation
+This application is made with a tutorial on youtube.
+
+## Tutorial
 You can find this tutorial on youtube by searching on codeigniter tutorial or just click on the links below:
-
-
 
 [Youtube video part one](https://www.youtube.com/watch?v=I752ofYu7ag)
 
@@ -24,9 +24,10 @@ You can find this tutorial on youtube by searching on codeigniter tutorial or ju
 [Youtube video part eight](https://www.youtube.com/watch?v=WoQTjJepDWM )
 
 
-## Contributing
-In this tutorial i have made some changes like an admin rule. 
+## My changes
+In this tutorial I have made some changes like an admin rule. 
 The account with ID number 1 is the admin.
 With the admin account you can change every post and category even if you didn't make it yourself.
 
-If you have updates this code please let me know so that I can update the code for other programmers.
+##Let me know
+If you have found errors or made updates by yourself that will come in handy please let me know.
