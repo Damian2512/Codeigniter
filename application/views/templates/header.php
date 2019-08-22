@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>ciBlog</title>
+	<title>CodeigniterBlog</title>
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
 	<script src="http://cdn.ckeditor.com/4.5.11/standard/ckeditor.js"></script>
