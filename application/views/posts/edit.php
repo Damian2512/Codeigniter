@@ -20,10 +20,5 @@
 		<?php endforeach;?>
 	</select>
 </div>
-<div class="form-group">
-	<label>Upload Image</label>
-	<input type="file" name="userfile" size="20">
-</div>
-
 <button type="submit" class="btn btn-primary">Submit</button>
 <?php echo form_close(); ?>

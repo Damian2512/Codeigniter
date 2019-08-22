@@ -1,7 +1,6 @@
 <?php
 
-class Posts extends CI_Controller
-{
+class Posts extends CI_Controller {
 	public function index($offset = 0)
 	{
 		//pagination config
@@ -29,7 +28,7 @@ class Posts extends CI_Controller
 		$post_id = $data['post']['id'];
 		$data['comments'] = $this->comment_model->get_comments($post_id);
 
-		if(empty($data['post'])) {
+		if (empty($data['post'])) {
 			show_404();
 		}
 		$data['title'] = $data['post']['title'];
@@ -38,9 +37,10 @@ class Posts extends CI_Controller
 		$this->load->view('posts/view', $data);
 		$this->load->view('templates/footer');
 	}
-	public function create(){
+
+	public function create() {
 		// Check login
-		if (!$this->session->userdata('logged_in')){
+		if (!$this->session->userdata('logged_in')) {
 			redirect('users/login');
 		}
 
@@ -51,7 +51,7 @@ class Posts extends CI_Controller
 		$this->form_validation->set_rules('title', 'Title', 'required');
 		$this->form_validation->set_rules('body', 'Body', 'required');
 
-		if($this->form_validation->run() === FALSE){
+		if ($this->form_validation->run() === FALSE) {
 			$this->load->view('templates/header');
 			$this->load->view('posts/create', $data);
 			$this->load->view('templates/footer');
@@ -63,15 +63,16 @@ class Posts extends CI_Controller
 			$config['max_width'] = '2000';
 			$config['max_height'] = '2000';
 
-			$this->load->library('upload', $config);
+			$this->load->library('upload');
+			$this->upload->initialize($config);
 
-if(!$this->upload->do_upload()){
-	$errors = array('error' => $this->upload->display_errors());
-$post_image = 'noimage.jpg';
-} else {
-	$data = array('upload_data' => $this->upload->data());
-	$post_image = $_FILES['userfile']['name'];
-}
+			if (!$this->upload->do_upload()) {
+				$errors = array('error' => $this->upload->display_errors());
+				$post_image = 'noimage.jpg';
+			} else {
+				$data = array('upload_data' => $this->upload->data());
+				$post_image = $_FILES['userfile']['name'];
+			}
 
 			$this->post_model->create_post($post_image);
 
@@ -81,9 +82,11 @@ $post_image = 'noimage.jpg';
 			redirect('posts');
 		}
 	}
-	public function delete($id){
+
+	public function delete($id)
+	{
 		// Check login
-		if (!$this->session->userdata('logged_in')){
+		if (!$this->session->userdata('logged_in')) {
 			redirect('users/login');
 		}
 
@@ -94,22 +97,24 @@ $post_image = 'noimage.jpg';
 
 		redirect('posts');
 	}
-	public function edit($slug){
+
+	public function edit($slug)
+	{
 		// Check login
-		if (!$this->session->userdata('logged_in')){
+		if (!$this->session->userdata('logged_in')) {
 			redirect('users/login');
 		}
 
 		$data['post'] = $this->post_model->get_posts($slug);
 
 		// Check user
-		if ($this->session->userdata('user_id') != $this->post_model->get_posts($slug)['user_id']){
+		if ($this->session->userdata('user_id') != $this->post_model->get_posts($slug)['user_id']) {
 			redirect('posts');
 		}
 
 		$data['categories'] = $this->post_model->get_categories();
 
-		if(empty($data['post'])) {
+		if (empty($data['post'])) {
 			show_404();
 		}
 		$data['title'] = 'Edit Post';
@@ -131,5 +136,6 @@ $post_image = 'noimage.jpg';
 
 			redirect('posts');
 	}
+
 }
 
