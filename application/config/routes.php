@@ -6,6 +6,7 @@ $route['posts/create'] = 'posts/create';
 $route['posts/update'] = 'posts/update';
 $route['posts/(:any)'] = 'posts/view/$1';
 $route['posts'] = 'posts/index';
+$route['login'] = 'users/login';
 
 
 
