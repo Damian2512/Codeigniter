@@ -1,17 +1,17 @@
 <h2><?php echo $post['title']; ?></h2>
 <small class="post-date">Posted on: <?php echo $post['created_at'];?></small><br>
-<img class="post-thumb" src="<?php echo site_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>">
+<img class="post-thumb" src="<?php echo site_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>"><br/><br/>
 <div class="post-body">
-	<?php echo $post['body']; ?>
+	<p><?php echo $post['body']; ?></p>
 </div>
 
 <?php if($this->session->userdata('user_id') == $post['user_id'] || isAdmin()): ?>
 
 <hr>
-<a class="btn btn-default pull-left" href="<?php echo base_url();?>posts/edit/<?php echo $post['slug']; ?>">Edit</a>
 <?php echo form_open('/posts/delete/'.$post['id']); ?>
-<input type="submit" value="Delete" class="btn btn-danger">
+<input type="submit" value="Delete" class="btn btn-danger">  <a class="btn btn-primary pull-left" href="<?php echo base_url();?>posts/edit/<?php echo $post['slug']; ?>">Edit</a>
 </form>
+
 <?php endif;?>
 <hr>
 <h3>Comments</h3>
